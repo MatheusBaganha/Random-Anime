@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F2F2F2;
+    display: grid;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    margin: 64px 0 36px 0;
+}
+
+.anime-escolhido {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-style: italic;
+    color: #202020;
+    margin: 64px 0 84px 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    gap: 12px;
+}
+
+select {
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+select, .pesquisar {
+    height: 40px;
+    width: 190px;
+    max-width: 220px;
+    font-size: 1rem;
+}
+
+.pesquisar {
+    max-width: 120px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.random {
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: #72FF77;
+    border: none;
+    box-shadow: 1px 1px 3px #00a00594;
+    font-size: 1.2rem;
+}
+
+.pesquisar, .random {
+    cursor: pointer;
+}
+
+.todas-frases {
+    display: grid;
+    gap: 64px 0;
+}
+
+.container-frase {
+    max-width: 100ch;
+    margin: 0 auto;
+}
+
+.frase, .personagem {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+}
+
+.personagem {
+    display: block;
+    margin-top: 32px;
+    font-weight: bold;
+}
+
+.linha {
+    content: '';
+    width: 60vw;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 64px 0 12px 0;
+}
+
+.linha:first-child {
+    margin: 64px 0;
+}
