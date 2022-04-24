@@ -15,6 +15,8 @@ h1 {
 }
 
 .anime-escolhido {
+    display: none;
+    /* display: block; */
     font-family: 'Merriweather', serif;
     text-align: center;
     font-style: italic;
@@ -64,13 +66,30 @@ select, .pesquisar {
 }
 
 .todas-frases {
-    display: grid;
+    display: none;
+    /* display: grid; */
     gap: 64px 0;
 }
 
 .container-frase {
     max-width: 100ch;
     margin: 0 auto;
+}
+
+.container-frase.animar {
+    animation: slide 0.5s forwards;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .frase, .personagem {
@@ -85,6 +104,7 @@ select, .pesquisar {
 }
 
 .linha {
+    display: none;
     content: '';
     width: 60vw;
     height: 2px;
