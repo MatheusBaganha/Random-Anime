@@ -1,39 +1,44 @@
 const frases = Array.from(document.querySelectorAll('[data-frase]'));
 const personagens = Array.from(document.querySelectorAll('[data-personagem]'));
-const container = document.querySelectorAll('[data-container]')
+const containers = document.querySelectorAll('[data-container]');
 const randomBtn = document.querySelector('[data-randomBotao]');
+const error = document.querySelector('[data-erro]');
 let i;
 
+async function randomFrase() {
+  const requisicao = await fetch('https://animechan.vercel.app/api/quotes');
+  const json = requisicao.json();
+  json.then((quotes) => {
+    for (i = 0; i <= 10; i += 1) {
+      frases[i].innerHTML = `"${quotes[i].quote}"`;
+      personagens[i].innerHTML = `- ${quotes[i].character}`;
+    }
+  });
 
-function randomFrase() {
-    fetch('https://animechan.vercel.app/api/quotes') 
-          .then(response => response.json()) // sai uma array com objetos
-          .then(quotes => {
-              for(let i = 0; i <= 10; i++) {
-                  frases[i].innerHTML = '"' + quotes[i].quote + '"';
-                  personagens[i].innerHTML = '- ' + quotes[i].character;
-              }
-              return iniciarFetch;
-            });
-    
-    const todasFrases = document.querySelector('[data-todasFrases]');
-    const linhas = document.querySelectorAll('.linha');
-    const animeEscolhido = document.querySelector('.anime-escolhido');
-    animeEscolhido.innerHTML = 'Random Quotes';
+  if (!requisicao.ok) {
+    error.style.display = 'block';
+    return this;
+  }
+  //  Se der erro tenta doublequote
 
-    animeEscolhido.style.display = "block";
-    todasFrases.style.display = "grid";
-    linhas.forEach((linha) => {
-      linha.style.display = "block";
-    })
+  const animeEscolhido = document.querySelector('.anime-escolhido');
+  const todasFrases = document.querySelector('[data-todasFrases]');
+  const linhas = document.querySelectorAll('.linha');
+  animeEscolhido.innerHTML = 'Random Quotes';
 
-    container.forEach((container) => {
-          container.classList.add('animar');
-          setTimeout(() => {
-              container.classList.remove('animar');
-          }, 3000)
-      })
-  
+  animeEscolhido.style.display = 'block';
+  todasFrases.style.display = 'grid';
+  linhas.forEach((linha) => {
+    linha.style.display = 'block';
+  });
+
+  containers.forEach((container) => {
+    container.classList.add('animar');
+    setTimeout(() => {
+      container.classList.remove('animar');
+    }, 1000);
+  });
+  return randomFrase;
 }
 
 randomBtn.addEventListener('click', randomFrase);
