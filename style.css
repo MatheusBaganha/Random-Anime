@@ -42,7 +42,7 @@ h1 {
 }
 
 .random {
-    margin: 0 auto;
+    margin: 0 auto 128px auto;
     padding: 15px 60px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -64,6 +64,7 @@ h1 {
 }
 
 .container-frase {
+    display: block;
     max-width: 100ch;
     margin: 0 auto;
 }
@@ -97,6 +98,16 @@ h1 {
     display: block;
     margin-top: 32px;
     font-weight: 700;
+}
+
+.copy {
+    display: none;
+    content: url(svg/copy.svg);
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: -12px;
+    cursor: pointer;
 }
 
 .linha {

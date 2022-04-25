@@ -3,6 +3,7 @@ const personagens = Array.from(document.querySelectorAll('[data-personagem]'));
 const containers = document.querySelectorAll('[data-container]');
 const randomBtn = document.querySelector('[data-randomBotao]');
 const error = document.querySelector('[data-erro]');
+const copys = document.querySelectorAll('.copy');
 let i;
 
 async function randomFrase() {
@@ -20,14 +21,20 @@ async function randomFrase() {
     return this;
   }
 
-  const animeEscolhido = document.querySelector('.anime-escolhido');
   const todasFrases = document.querySelector('[data-todasFrases]');
   const linhas = document.querySelectorAll('.linha');
 
-  animeEscolhido.style.display = 'block';
+  function clipboard() {
+    navigator.clipboard.writeText(this.parentElement.innerText);
+  }
+
   todasFrases.style.display = 'grid';
   linhas.forEach((linha) => {
     linha.style.display = 'block';
+  });
+  copys.forEach((copy) => {
+    copy.style.display = 'block';
+    copy.addEventListener('click', clipboard);
   });
 
   containers.forEach((container) => {
