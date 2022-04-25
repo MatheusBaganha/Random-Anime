@@ -19,12 +19,10 @@ async function randomFrase() {
     error.style.display = 'block';
     return this;
   }
-  //  Se der erro tenta doublequote
 
   const animeEscolhido = document.querySelector('.anime-escolhido');
   const todasFrases = document.querySelector('[data-todasFrases]');
   const linhas = document.querySelectorAll('.linha');
-  animeEscolhido.innerHTML = 'Random Quotes';
 
   animeEscolhido.style.display = 'block';
   todasFrases.style.display = 'grid';

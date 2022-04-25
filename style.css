@@ -8,25 +8,27 @@ body {
     display: grid;
 }
 
-h1 {
-    text-align: center;
+h1, .anime-escolhido, .frase, .personagem {
     font-family: 'Merriweather', serif;
-    margin: 64px 0 36px 0;
 }
 
-.anime-escolhido {
-    display: none;
-    /* display: block; */
-    font-family: 'Merriweather', serif;
+h1 {
     text-align: center;
-    font-style: italic;
+    margin: 64px 0 36px 0;
+    font-size: 2.2rem;
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 32px;
     color: #202020;
-    margin: 64px 0 84px 0;
 }
 
 .erro {
     display: none;
-    /* display: block; */
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(233, 166, 166);
     padding: 35px;
@@ -39,50 +41,25 @@ h1 {
     color: #0f0f0f;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 32px;
-    gap: 12px;
-}
-
-select {
-    border-radius: 5px;
-    padding-left: 10px;
-    background-color: rgb(245, 245, 245);
-}
-
-select, .pesquisar {
-    height: 40px;
-    width: 190px;
-    max-width: 220px;
-    font-size: 1rem;
-}
-
-.pesquisar {
-    max-width: 120px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
 .random {
     margin: 0 auto;
-    padding: 10px 30px;
+    padding: 15px 60px;
+    box-sizing: border-box;
     border-radius: 5px;
     background-color: #72FF77;
     border: none;
     box-shadow: 1px 1px 3px #00a00594;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.pesquisar, .random {
-    cursor: pointer;
+.random:hover {
+    background-color: #43c947;
 }
 
 .todas-frases {
     display: none;
-    /* display: grid; */
     gap: 64px 0;
 }
 
@@ -108,14 +85,18 @@ select, .pesquisar {
 }
 
 .frase, .personagem {
-    font-family: 'Merriweather', serif;
     font-size: 1.3rem;
+    color: #1a1515;
+}
+
+.frase {
+    font-weight: 300;
 }
 
 .personagem {
     display: block;
     margin-top: 32px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .linha {
