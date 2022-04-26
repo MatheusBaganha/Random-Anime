@@ -11,7 +11,7 @@ async function randomFrase() {
   const json = requisicao.json();
   json.then((quotes) => {
     for (i = 0; i <= 10; i += 1) {
-      frases[i].innerHTML = `"${quotes[i].quote}"`;
+      frases[i].innerHTML = `“${quotes[i].quote}”`;
       personagens[i].innerHTML = `- ${quotes[i].character}`;
     }
   });
